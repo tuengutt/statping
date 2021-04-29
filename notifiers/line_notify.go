@@ -57,7 +57,7 @@ func (l *lineNotifier) sendMessage(message string) (string, error) {
 
 // OnFailure will trigger failing service
 func (l *lineNotifier) OnFailure(s services.Service, f failures.Failure) (string, error) {
-	msg := fmt.Sprintf("Your service '%v' is currently offline! %s", s.Name, f.Issue)
+	msg := fmt.Sprintf("THP Server '%v' is currently offline! %s", s.Name, f.Issue)
 	out, err := l.sendMessage(msg)
 	return out, err
 }
